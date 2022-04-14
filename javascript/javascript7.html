@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연습 7</title>
+</head>
+<body>
+    <h1>BOM 객체</h1>
+    <h2>Window 객체</h2>
+    <p onclick="func1()">문장1</p>
+    <p id="para2">문장2</p>
+    <h3 id="pop_open">팝업창 열기</h3>
+    <script>
+    var obj = {name:"김기태", age:29, window:function() { document.write("obj객체"); } };
+    obj.window();
+    //객체는 필드, 메서드, 생성자, 이벤트핸들러(메서드)
+    //필드는 field : value 로 표기됨
+    //메서드는 method : function() { } 로 표기됨
+    //하위 객체는 object : [object XXXX] 로 표기됨
+    //이벤트핸들러는 on으로 시작함
+    function func1(){
+        alert("인라인 이벤트핸들러 실행");
+    }
+    //UI 3요소 : 상호작용(이벤트 작동), 위젯, 효과
+    var para2 = document.getElementById("para2");
+    para2.addEventListener("click", function(){ alert("일반 이벤트핸들러 실행"); });
+    for(var key in window){
+        document.write(key+" : "+window[key]+"<br>");
+    }
+    var pop = document.getElementById("pop_open");
+    pop.addEventListener("click", function(){ 
+        window.open("javascript5.html", "child", "menubar=no, location=no, scrollbars=no, resizable=yes, status=yes");
+    });
+    //객체의 선택과 저장 : document.getElementById("아이디");
+    //이벤트 핸들러(발생자) -> 이벤트객체.addEventListener("이벤트명", function(){ 이벤트내용; });
+    //팝업창열기 : window.open("열파일URL 또는 열기할내용", "창이름", "창의옵션");
+    //창의 옵션 : menubar, location, scrollbars, resizable, status, width, height 등을 지정
+    //창 닫기 : 창이름.close();
+    //창 인쇄 : 창이름.print();
+    </script>
+</body>
+</html>

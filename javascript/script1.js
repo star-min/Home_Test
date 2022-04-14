@@ -1,0 +1,1 @@
+document.write("<h1>외부 스크립트</h1>");

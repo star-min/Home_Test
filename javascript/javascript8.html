@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연습 8</title>
+</head>
+<body>
+    <h1>Location 객체와 History 객체</h1>
+    <select name="sel1" id="sel1">
+        <option value="">선택안함</option>
+        <option value="http://www.google.com">구글</option>
+        <option value="http://www.naver.com">네이버</option>
+        <option value="http://www.daum.net">다음</option>
+    </select>
+    <br>
+    <select name="sel2" id="sel2">
+        <option value="">선택안함</option>
+        <option value="http://www.google.com">구글</option>
+        <option value="http://www.naver.com">네이버</option>
+        <option value="http://www.daum.net">다음</option>
+    </select>
+    <br>
+    <select name="sel3" id="sel3">
+        <option value="">선택안함</option>
+        <option value="http://www.google.com">구글</option>
+        <option value="http://www.naver.com">네이버</option>
+        <option value="http://www.daum.net">다음</option>
+    </select>
+    <br>
+    <button name="sel4" id="sel4">새로 고침</button>
+    <br>
+    <button id="his1">뒤로 가기</button><br>
+    <button id="his2">앞으로 가기</button><br>
+    <button id="his3">앞으로 두 페이지 이동</button><br>
+    <button id="his4">뒤로 두 페이지 이동</button><br>
+    <br>
+    <script>
+    document.write("<h2>location</h2>");
+    for(var key in location){
+        document.write(key+" : "+location[key]+"<br>");
+    }
+    document.write("<h2>history</h2>");
+    for(var key in history){
+        document.write(key+" : "+history[key]+"<br>");
+    }
+    var sel1 = document.getElementById("sel1");    
+    var sel2 = document.getElementById("sel2");
+    var sel3 = document.getElementById("sel3");
+    var sel4 = document.getElementById("sel4");
+    sel1.addEventListener("change", function(){ 
+        //현재 창에 띄우기
+        location.href = sel1.value; 
+        //새창으로 띄우기
+        //window.open(sel1.value, 'new_window', 'width=400, height=300');
+    });
+    sel2.addEventListener("change", function(){
+        if(sel2.value==""){            return false;
+        } else {            location.assign(sel2.value);        }
+    });
+    sel3.addEventListener("change", function(){
+        location.replace(sel3.value); //뒤로가기 비활성화 됨
+    });
+    sel4.addEventListener("click", function(){ location.reload(); });
+    var his1 = document.getElementById("his1"); 
+    var his2 = document.getElementById("his2"); 
+    var his3 = document.getElementById("his3"); 
+    var his4 = document.getElementById("his4");
+    his1.addEventListener("click", function(){ history.back(); }); 
+    his2.addEventListener("click", function(){ history.forward(); }); 
+    his3.addEventListener("click", function(){ history.go(2); }); 
+    his4.addEventListener("click", function(){ history.go(-2); }); 
+    </script>
+</body>
+</html>

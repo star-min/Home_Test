@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 스크립트 연습 5</title>
+</head>
+<body>
+    <h1>객체</h1>
+    <h2>데이터 객체 : Number(integer, float), Math, Date, String, Array,..</h1>
+    <h2>DOM 객체 : 태그, 클래스, 아이디 등 현재 문서에 존재하는 요소(태그)</h2>
+    <h2>BOM 객체 : window, screen, navigator, location, history, timer, alert, confirm, input 등</h2>
+    <h2>기타 객체 : 응용 객체(File, GEO Location, Audio, Video,...)</h2>
+    <hr>
+    <h1>데이터 객체</h1>
+    <h2>Number</h2>
+    <script>
+    var x = 0xAC;  //16진수
+    var y = 076;    //8진수
+    var z = 126;
+    var txt = "";
+    txt+="2진수 : ";
+    txt+=z.toString(2);
+    txt+="<br>8진수 : ";
+    txt+=z.toString(8);
+    txt+="<br>10진수 : ";
+    txt+=z.toString(10);
+    txt+="<br>16진수 : ";
+    txt+=z.toString(16);
+    document.write(txt);
+    var k=0, j=0;
+    var a = 10 / 0;     //Infinity
+    var b = 100 - "김기태"; //NaN
+    var c = k / j;  //NaN
+    if(isFinite(a)){
+        alert("계산이 가능한 수입니다.");
+    } else {
+        alert("계산이 불가능한 수입니다.");
+    }
+    if(isNaN(b)) {
+        alert("숫자가 아니라서 연산이 되지 않습니다.")
+    }
+    
+    var d = "100.6789";
+    var e = new Number(d);  //100.6789
+    var f = parseInt(d);    //100
+    var g = parseFloat(d);  //100.6789
+    if(Number.isInteger(f)){
+        console.log("f는 정수가 맞습니다.");
+    }
+    </script>
+    <br>
+    <h2>Math 객체</h2>
+    <p>min, max, abs, ceil, floor, round, sqrt, pow, sin, cos, tan,..</p>
+    <script>
+    console.log("Math 객체의 메서드");
+    console.log(Math.min(10,12,9,11,8));  //8
+    console.log(Math.max(10,12,9,11,8)); //12
+    console.log(Math.abs(36.4));     //36.4
+    console.log(Math.abs(-36.4));     //36.4
+    console.log(Math.ceil(36.4));     //37
+    console.log(Math.ceil(-36.4));    //-36
+    console.log(Math.floor(36.4));    //36
+    console.log(Math.floor(-36.4));   //-37
+    console.log(Math.round(36.4));    //36
+    console.log(Math.round(-36.4));   //-36
+    console.log(Math.PI); //3.14159...
+    console.log(Math.sqrt(64));      //8
+    console.log(Math.pow(2,4));      //16
+    </script>
+    <hr>
+    <button id="close_btn">닫기</button><br>
+    <button id="print_btn">인쇄</button>
+    <script>
+     var btn = document.getElementById("close_btn");
+     btn.addEventListener("click", function(){ self.close(); });
+     var prt = document.getElementById("print_btn");
+     prt.addEventListener("click", function(){ self.print(); });
+    </script>
+</body>
+</html>

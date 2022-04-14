@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 스크립트 연습 3</title>
+</head>
+<body>
+    <h1 id="title1" class="kim">자바스크립트 연습3</h1><!-- h1[0] -->
+    <h1>두 번째 제목</h1><!-- h1[1] -->
+    <p class="kim">여기는 일반 문장</p>
+    <form action="">
+        이름 : <input type="text" id="name" name="name" value="장성필">
+        <button onclick="fn1()" class="kim">변경</button>
+    </form>
+    <script>
+    document.write("<h1>여기는 두 번째 제목</h1>"); //h1[2]
+    var title1 = document.getElementById("title1");
+    title1.innerHTML = "여기는 여승원님의 자리입니다.";  
+    var h1 = document.getElementsByTagName("h1");
+    var kim = document.getElementsByClassName("kim");
+    //alert("h1 개수 : "+h1.length);
+    // for(var i=0;i<h1.length;i++){
+    //     alert(h1[i].innerText);
+    // }
+    for(var i=0;i<kim.length;i++){
+        kim[i].innerText = "김기태";
+    }
+    function fn1(){
+        var name = document.getElementById("name");
+        name.value = "김기태";
+        return false;
+    }
+    </script>
+</body>
+</html>

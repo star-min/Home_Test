@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    ul { list-style:none; }
+    button { width: 50px; height: 36px; line-height: 36px; outline:0; border:0; 
+        border-radius:5px; text-align:center; margin:5px; font-size:18px; } 
+    .num { background-color: #666; color:#fff; }
+    .op { background-color: navy; color:#fff; }
+    .bg1 { background-color:deepskyblue; }   
+    .equal { background-color:rgb(179, 11, 11); color:#fff; width: 180px; }   
+    .bg2 { background-color: lawngreen; } 
+    input { background-color: #999; border:0; outline:0; }
+    #display { width: 230px; height: 48px; margin-top:10px; margin-left: 5px;
+    font-size:24px; padding-left: 10px; padding-right: 10px; 
+    text-align: right; }
+    #result { width: 230px; height: 48px; margin-top:10px; margin-bottom: 10px; margin-left: 5px; 
+    background-color:#000; color:#fff; font-size:24px; padding-left: 10px; padding-right: 10px; 
+    text-align: right;}
+    #calculator { width: 260px;  margin: 10px auto; border:3px solid #999; }
+    @font-face {
+        font-family: 'digital';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+        font-weight: normal;
+        font-style:normal;
+    }
+    #result, #display { font-family: 'digital'; font-style: italic; }
+    .title { text-align: center;  padding: 30px; }
+    </style>
+</head>
+<body>
+    <h2 class="title">계산기</h2>
+    <div id="calculator">
+        <ul class="wrap">
+            <li class="row1">
+                <input type="text" id="display" readonly>
+            </li>
+            <li>
+                <input type="text" id="result" readonly>
+            </li>
+            <li>
+                <button class="num" id="num7" onclick="add(7)">7</button>
+                <button class="num" id="num8" onclick="add(8)">8</button>
+                <button class="num" id="num9" onclick="add(9)">9</button>
+                <button class="op bg1" id="ac">AC</button>
+            </li>
+            <li>
+                <button class="num" id="num4" onclick="add(4)">4</button>
+                <button class="num" id="num5" onclick="add(5)">5</button>
+                <button class="num" id="num6" onclick="add(6)">6</button>
+                <button class="op" id="divide" onclick="add('/')">/</button>
+            </li>
+            <li>
+                <button class="num" id="num1" onclick="add(1)">1</button>
+                <button class="num" id="num2" onclick="add(2)">2</button>
+                <button class="num" id="num3" onclick="add(3)">3</button>
+                <button class="op" id="multiply" onclick="add('*')">*</button>
+            </li>
+            <li>
+                <button class="num" id="period" onclick="add('.')">.</button>
+                <button class="num" id="num0" onclick="add(0)">0</button>
+                <button class="op" id="plus" onclick="add('+')">+</button>
+                <button class="op" id="minus" onclick="add('-')">-</button>
+            </li>
+            <li>
+                <button class="equal" id="equal">=</button>
+                <button class="op bg2" id="onoff">OFF</button>
+            </li>
+        </ul>
+    </div>
+    <script>
+    function add(char){
+        var display = document.getElementById("display");
+        display.value = display.value + char;
+    }    
+    var ac = document.getElementById("ac");
+    var display = document.getElementById("display");
+    var result = document.getElementById("result");
+    ac.addEventListener("click", function(){ 
+        display.value=""; 
+        result.value=""; 
+    });
+    var equal = document.getElementById("equal");
+    equal.addEventListener("click", function(){
+        var data = eval(display.value);
+        result.value = data;
+    });
+    var onoff = document.getElementById("onoff");
+    onoff.addEventListener("click", function(){ self.close(); });
+    </script>
+</body>
+</html>
