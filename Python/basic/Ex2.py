@@ -1,21 +1,8 @@
-# 입력 함수
-# x = input()
-# print(x)
-# input 를 이용해 두 숫자의 합
-# a = input('첫 번째 숫자를 입력해 주세요')
-# b = input('두 번째 숫자를 입력해 주세요')
-# print(a + b)
-# 위 처럼하면 문자열로 들어감
-# a = int(input('첫 번째 숫자를 입력해 주세요'))
-# b = int(input('두 번째 숫자를 입력해 주세요'))
-# print(a + b)
-# a, b = input('문자열 두개를 입력').split()
-# print(a)
-# print(b)
-
-# c, d = input('숫자 두 개를 입력').split()
-# c = int(c)
-# d = int(d)
-# print(c+d)
-
-input().split(',') # split에 콤마를 넣으면 콤마를 기준으로 구분하게됨 공백은 띄어쓰기 
+#변수명은 알파벳으로 시작하고, 대소문자를  구분하며, 예약어를 사용할수 없다
+#예약어(Reeserved Word) = keyword : print(x) print1(0)
+# printNumber(0) : 카멜 방식 ,단어를 읽기쉽도록 두번째단어부터 첫글자를 대문자호
+#print_number(0) : 언더스코어 방식, 단어 중간마다 언더스코어(_)
+#변수명은 누구든지 그 기능이나 저장된 데이터를 쉽게알수 있도록하는것이 관례
+#식별자(Identifiers) : 변수, 클래스, 모듈, 함수
+import keyword
+print(keyword.kwlist)
