@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+     <head>
+	     <meta charset="utf-8">
+		 <title>사이트이동</title>
+     </head>
+	 <body>
+		<script>
+	 	var site = prompt("네이버, 다음, 네이트, 구글 중 하나 검색","");
+		var url;
+		switch(site){
+			case "네이버":
+				url="www.naver.com";
+				break;
+			case "다음" :
+				url="www.daum.net";
+				break;
+			case "네이트":
+				url="www.nate.com";
+				break;
+			case "구글":
+				url="www.google.com";
+				break;
+			default:
+				alert("보기중에 고르라고 ㅅㅂ");
+		}
+		if(url) location.href="http://"+url;
+		</script>
+	 </body>
+</html>

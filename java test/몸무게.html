@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+     <head>
+	     <meta charset="utf-8">
+		 <title>프로젝트2</title>
+     </head>
+	 <body>
+		<script>
+	 	// 신장을 입력
+		var userHeight = prompt("당신의 신장은?","0");
+		// 몸무게를 입력
+		var userWeight = prompt("당신의 몸무게는?","0");
+		// 표준 적정 몸무게 계산
+		var bmi = (userHeight-100)*0.9;
+		// 조건문을 만들어 적정몸무게인지 표시
+		// 조건이 참일때 ? 적정몸무게 이상 적정 몸무게 미달;
+		var result = userWeight > bmi ?"적정몸무게 이상":"적정몸무게 미달";
+		document.write(result,"<br>");
+		</script>
+	 </body>
+</html>

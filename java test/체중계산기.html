@@ -1,0 +1,49 @@
+package ex5;
+
+public class MainActivity11 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("[표준 체중 및 비만도 계산 프로그램 구현 실시]");
+		
+		/*[설 명]
+		 * 1. 표준 체중 계산 공식 : (현재 신장(cm) - 100) * 0.9 
+		 * 2. 비만도 계산 공식 : (현재체중 / 표준체중) * 100
+		 * 3. 비만도가 120%넘으면 비만으로 판정합니다
+		 * 4. 비만도 90미만 - 저체중 / 비만도 90이상 ~ 110미만 - 정상체중 / 비만도 110이상 ~ 120미만 - 과체중 / 비만도 120이상 - 비만 
+		 * */
+		
+		int h = 175; //신장 값
+		int w = 90; //몸무게 값
+				
+		getWeight(h, w); //표준체중 확인 및 비만도 계산 메소드 호출
+				
+	}//메인 종료
+	
+	public static void getWeight(int h, int w) {
+		System.out.println("현재 사용자 신장 및 몸무게 : "+ h + "cm" + " / " + w + "kg");
+		
+		double nomalWeight = (h - 100) * 0.9; //표준 체중 계산 공식 수행
+		System.out.println("사용자 표준 체중 : "+ nomalWeight);
+		
+		double fatnessWeight = (w / nomalWeight) * 100; //비만도 계산 구하는 공식 수행
+		System.out.println("비만도 계산 값 : "+ fatnessWeight);
+		
+		if(fatnessWeight < 90) { //저체중
+			System.out.println("비만도 판단 : "+ "저체중입니다");	
+		}
+		else if(fatnessWeight >= 90 && fatnessWeight < 110) { //정상체중
+			System.out.println("비만도 판단 : "+ "정상 체중입니다");
+		}
+		else if(fatnessWeight >= 110 && fatnessWeight < 120) { //과체중
+			System.out.println("비만도 판단 : "+ "과체중입니다");
+		}
+		else if(fatnessWeight >= 120) { //비만
+			System.out.println("비만도 판단 : "+ "비만입니다");
+		}
+		else {
+			System.out.println("비만도 판단 : "+ "데이터를 다시 확인해주세요 ... ");
+		}		
+	}
+
+}

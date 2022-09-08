@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jquery 직접선택자</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>>
+</head>
+<body>
+	<script>
+		$(document).ready(function(){
+			$("#wrap h1").css({"background-color":"yellow"});
+		});
+	</script>
+	<div id="wrap">
+		<h1>인접 관계 선택자</h1>
+		<p>내용1</p>
+		<section>
+			<h1>하위 요소 선택자</h1>
+			<p2>내용2</p2>
+		</section>
+	</div>
+	<ul>
+		<li>리스트1
+			<ul>
+				<li id="list_1">리스트1-1</li>
+				<li>리스트1-2</li>
+			</ul>
+		</li>
+		<li>리스트2</li>
+		<li>리스트3</li>
+	</ul>
+	<p class="txt">내용2</p>
+	<p>내용3</p>
+	<p>내용4</p>
+</body>
+</html>

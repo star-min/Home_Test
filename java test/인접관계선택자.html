@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+     <head>
+	     <meta charset="utf-8">
+		 <title>인접관계선택자</title>
+	 <body>
+	 <div id ="wrap">
+	 <P>내용1</P>
+	 <P>내용2</P>
+	 <P>내용3</P>
+	 <P>내용4</P>
+	 </div>
+		<script>
+	 	document.getElementById("wrap").children[0].style.color="red";
+		var p=document.getElementsByTagName("p")[1];
+		var nextObject=p.nextSibling;
+		while (nextObject.nodeType !=1){
+		nextObject=nextObject.nextSibling;
+		}
+		nextObject.style.backgroundColor="yellow";
+		</script>
+	 </body>
+</html>

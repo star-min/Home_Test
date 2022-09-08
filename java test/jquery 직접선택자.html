@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jquery 직접선택자</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>>
+</head>
+<body>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("p").hide();
+			});
+		});
+	</script>
+	<h2>제목 jquery 직접선택자</h2>
+	<p>첫번째 p-tag 문단</p>
+	<p>두번째 p-tag 문단</p>
+	<button>p-tag 선택</button>
+</body>
+</html>
