@@ -7,6 +7,7 @@
 <title>insert</title>
 </head>
 <body>
+
 <section style="position:fixed; top:70px; left:0px; width:100%; height:100%; background-color:lightgray">
 <h2 style="text-align:center">수강신청</h2>
 <form style="display:flex; align-items:center; justify-content:center">
@@ -64,8 +65,8 @@
 		</tr>
 		
 		<tr>
-			<td colspan="2"> 
-				<input type="button" value="수강신청"> &nbsp;
+			<td colspan="2" style="text-align: center;"> 
+				<input type="button" value="수강신청" onclick="add()"> &nbsp;
 				<input type="button" value="다시쓰기">
 			</td>
 		</tr>
