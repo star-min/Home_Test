@@ -7,10 +7,10 @@
 <title>insert</title>
 </head>
 <body>
-
+<script type="text/javascript" src="check.js"></script>
 <section style="position:fixed; top:70px; left:0px; width:100%; height:100%; background-color:lightgray">
 <h2 style="text-align:center">수강신청</h2>
-<form style="display:flex; align-items:center; justify-content:center">
+<form name="frm" style="display:flex; align-items:center; justify-content:center">
 	<table border="1">
 		<tr>
 			<td style="text-align: center;"> 수강월 </td>
@@ -19,7 +19,7 @@
 		<tr>
 			<td style="text-align: center;"> 회원명 </td>
 			<td>
-				<select name="c_name">
+				<select name="c_name" onchange="getvalue(this.value)">
 					<option value=""> 회원명 </option>
 					<option value="10001"> 홍길동 </option>
 					<option value="10002"> 장발장 </option>
@@ -49,7 +49,7 @@
 		<tr>
 			<td style="text-align: center;"> 강의명 </td>
 			<td>
-				<select name="class_name" style="width:150px">
+				<select name="class_name" style="width:150px" onchange="getvalue2(this.value)">
 					<option value=""> 강의신청 </option>
 					<option value="100000"> 초급반 </option>
 					<option value="200000"> 중급반 </option>
@@ -67,7 +67,7 @@
 		<tr>
 			<td colspan="2" style="text-align: center;"> 
 				<input type="button" value="수강신청" onclick="add()"> &nbsp;
-				<input type="button" value="다시쓰기">
+				<input type="button" value="다시쓰기" onclick="res()">
 			</td>
 		</tr>
 	</table>
